@@ -10,8 +10,8 @@ export function SiteFooter() {
         <Image
           src={siteConfig.assets.logoDark}
           alt="Dryer Refresh"
-          width={345}
-          height={282}
+          width={288}
+          height={273}
           className="h-12 w-auto"
         />
         <div className="text-sm text-silver sm:text-right">
