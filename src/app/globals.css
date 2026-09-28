@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-background: var(--token-color-background);
+  --color-surface: var(--token-color-surface);
+  --color-foreground: var(--token-color-foreground);
+  --color-muted: var(--token-color-muted);
+  --color-muted-foreground: var(--token-color-muted-foreground);
+  --color-border: var(--token-color-border);
+  --color-brand: var(--token-color-brand);
+  --color-brand-foreground: var(--token-color-brand-foreground);
+  --color-dominant: var(--token-color-dominant);
+  --color-dominant-foreground: var(--token-color-dominant-foreground);
+  --color-secondary: var(--token-color-secondary);
+  --color-secondary-foreground: var(--token-color-secondary-foreground);
+  --color-accent: var(--token-color-accent);
+  --color-accent-foreground: var(--token-color-accent-foreground);
+  --color-destructive: var(--token-color-destructive);
+  --color-focus: var(--token-color-focus);
+  --color-cyan: var(--token-color-cyan);
+  --color-silver: var(--token-color-silver);
+  --color-safety: var(--token-color-safety);
+  --color-glow: var(--token-color-glow);
+  --font-sans: var(--token-font-sans);
+  --shadow-glow: var(--token-shadow-glow);
+  --breakpoint-xs: 24rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--token-color-background);
+  color: var(--token-color-foreground);
+  font-family: var(--token-font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--token-color-accent);
+  color: var(--token-color-accent-foreground);
+}
+
+.hero-wash {
+  background-image: linear-gradient(
+    135deg,
+    var(--token-color-glow),
+    var(--token-color-surface) 55%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: var(--motion-reduced) !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--motion-reduced) !important;
+  }
+}

@@ -1,0 +1,11 @@
+/build-page
+route: /services
+goal: Convert qualified visitors into quote requests
+sections:
+- hero
+- service grid
+- process
+- faq
+- cta
+seo_topic: residential roofing services
+content_source: docs/client/CLIENT_BRIEF.md

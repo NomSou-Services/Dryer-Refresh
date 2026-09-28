@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "60/30/10 Color Balance Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "distribution",
+    "principles",
+    "exceptions"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dominant",
+        "secondary",
+        "accent"
+      ],
+      "properties": {
+        "dominant": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "targetPercent",
+            "purpose"
+          ],
+          "properties": {
+            "targetPercent": {
+              "const": 60
+            },
+            "purpose": {
+              "const": "Quiet foundational canvas: page backgrounds, large surfaces, and whitespace-bearing neutral areas."
+            }
+          }
+        },
+        "secondary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "targetPercent",
+            "purpose"
+          ],
+          "properties": {
+            "targetPercent": {
+              "const": 30
+            },
+            "purpose": {
+              "const": "Supporting contrast: alternate sections, cards, panels, brand-supporting surfaces, and substantial navigation/footer regions."
+            }
+          }
+        },
+        "accent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "targetPercent",
+            "purpose"
+          ],
+          "properties": {
+            "targetPercent": {
+              "const": 10
+            },
+            "purpose": {
+              "const": "Scarce emphasis: primary CTAs, important links, selected states, badges, and intentional focal details."
+            }
+          }
+        }
+      }
+    },
+    "principles": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Treat 60/30/10 as an approximate composition target, not pixel-exact arithmetic.",
+        "Keep accent visually scarce so primary actions remain prominent.",
+        "Apply the balance at page, viewport, and major-section scale rather than forcing every component to use all three roles.",
+        "Use semantic design tokens instead of hard-coded colors.",
+        "Do not introduce extra decorative colors when the three role hierarchy is sufficient.",
+        "Approved visual references may intentionally override the ratio when the exception is documented."
+      ]
+    },
+    "exceptions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "Accessibility and readable contrast override decorative ratio targets.",
+        "Functional semantic colors such as destructive, warning, success, and focus are not forced into the decorative 10% share.",
+        "Photography, illustration, gradients, and brand-specific art direction should not be measured as literal pixel percentages."
+      ]
+    }
+  }
+}

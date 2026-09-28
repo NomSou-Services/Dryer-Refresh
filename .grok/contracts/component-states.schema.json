@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Component States Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "requiredStates",
+    "rules"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "requiredStates": {
+      "type": "object",
+      "required": [
+        "interactive",
+        "formControls",
+        "async"
+      ],
+      "properties": {
+        "interactive": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 4
+        },
+        "formControls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 5
+        },
+        "async": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 3
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 5
+    }
+  }
+}

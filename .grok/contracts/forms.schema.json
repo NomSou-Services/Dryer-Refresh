@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Forms UX Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "fieldRules",
+    "validationRules",
+    "submissionRules"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "fieldRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 5
+    },
+    "validationRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 5
+    },
+    "submissionRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 4
+    }
+  }
+}

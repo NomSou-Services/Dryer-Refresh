@@ -1,0 +1,51 @@
+{
+  "name": "dryer-refresh",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "qa": "npm run tokens:check && npm run tokens:usage && npm run color-balance:check && npm run audit:ci && npm run lint && npm run typecheck && npm run build",
+    "grok:route": "node scripts/grok-command-router.mjs",
+    "grok:route:test": "node --test scripts/grok-command-router.test.mjs",
+    "tokens:check": "node scripts/validate-design-tokens.mjs",
+    "tokens:test": "node scripts/validate-design-tokens.test.mjs",
+    "tokens:usage": "node scripts/check-design-token-usage.mjs",
+    "tokens:usage:test": "node scripts/check-design-token-usage.test.mjs",
+    "audit:output:test": "node scripts/validate-audit-output.test.mjs",
+    "audit:templates:test": "node scripts/audit-report-templates.test.mjs",
+    "audit:report": "node scripts/generate-audit-report.mjs",
+    "audit:report:test": "node scripts/generate-audit-report.test.mjs",
+    "audit:artifacts:check": "node scripts/check-audit-artifacts.mjs",
+    "audit:artifacts:test": "node scripts/check-audit-artifacts.test.mjs",
+    "audit:ci": "npm run audit:output:test && npm run audit:templates:test && npm run audit:report:test && npm run audit:artifacts:test && npm run audit:comment:test && npm run audit:artifacts:check",
+    "audit:comment": "node scripts/generate-audit-pr-comment.mjs",
+    "audit:comment:test": "node scripts/generate-audit-pr-comment.test.mjs",
+    "audit:comment:ci-test": "node scripts/ci-audit-comment.test.mjs",
+    "color-balance:check": "node scripts/check-color-balance-ui.mjs",
+    "color-balance:test": "node scripts/check-color-balance-ui.test.mjs"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "next": "^16.3.3",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.3.3",
+    "postcss": "^8.0.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.1.0"
+  }
+}

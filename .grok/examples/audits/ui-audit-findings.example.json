@@ -1,0 +1,34 @@
+{
+  "scope": "/services",
+  "findings": [
+    {
+      "id": "UI-001",
+      "severity": "medium",
+      "area": "spacing",
+      "title": "Example finding",
+      "evidence": "Observed visual inconsistency.",
+      "visualImpact": "Visual-system impact.",
+      "recommendation": "Specific corrective action.",
+      "files": [
+        "src/components/sections/services.tsx"
+      ],
+      "fixed": false,
+      "effort": "small",
+      "remediationValidation": "Re-run the UI audit for the affected section.",
+      "locations": [
+        {
+          "file": "src/components/sections/services.tsx",
+          "startLine": 18,
+          "endLine": 22
+        }
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "check": "tokens:usage",
+      "status": "pass",
+      "notes": "Example validation result."
+    }
+  ]
+}

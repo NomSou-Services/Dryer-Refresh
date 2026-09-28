@@ -1,0 +1,148 @@
+📄 .env.example
+📁 .github
+  📁 ISSUE_TEMPLATE
+    📄 bug_report.yml
+    📄 feature_request.yml
+  📄 copilot-instructions.md
+  📄 dependabot.yml
+  📄 pull_request_template.md
+  📁 workflows
+    📄 ci.yml
+📄 .gitignore
+📁 .grok
+  📄 COMMANDS.md
+  📁 commands
+    📄 audit.md
+    📄 build-page.md
+    📄 build-section.md
+    📄 design-tokens.md
+    📄 fix.md
+    📄 new-client.md
+    📄 refactor.md
+    📄 ship.md
+    📄 ui-audit.md
+    📄 ux-audit.md
+  📁 contracts
+    📄 accessibility.schema.json
+    📄 color-balance.schema.json
+    📄 component-states.schema.json
+    📄 design-tokens.schema.json
+    📄 forms.schema.json
+    📄 interaction-patterns.schema.json
+    📄 responsive-behavior.schema.json
+    📄 ui-audit-checks.schema.json
+    📄 ui-audit-output.schema.json
+    📄 ux-audit-checks.schema.json
+    📄 ux-audit-output.schema.json
+  📁 examples
+    📁 audits
+      📄 ui-audit-findings.example.json
+      📄 ux-audit-findings.example.json
+    📄 request-build-page.txt
+  📁 templates
+    📁 audits
+      📄 ui-audit-report.json
+      📄 ui-audit-report.md
+      📄 ux-audit-report.json
+      📄 ux-audit-report.md
+📄 AGENTS.md
+📄 README.md
+📄 REPO_TREE.txt
+📄 SECURITY.md
+📁 audits
+  📁 findings
+    📁 ui
+      📄 .gitkeep
+    📁 ux
+      📄 .gitkeep
+📁 design
+  📄 ACCESSIBILITY.md
+  📄 COLOR_BALANCE.md
+  📄 COMPONENT_STATES.md
+  📄 DESIGN_TOKENS.md
+  📄 FORMS.md
+  📄 INTERACTION_PATTERNS.md
+  📄 RESPONSIVE_BEHAVIOR.md
+  📄 UI_AUDIT.md
+  📄 UX_AUDIT.md
+  📁 examples
+    📄 60-30-10-ui.md
+  📄 tokens.json
+📁 docs
+  📄 ARCHITECTURE.md
+  📄 DEFINITION_OF_DONE.md
+  📄 SECURITY.md
+  📁 client
+    📄 .gitkeep
+📄 eslint.config.mjs
+📄 next-env.d.ts
+📄 next.config.ts
+📄 package.json
+📄 postcss.config.mjs
+📁 prompts
+  📄 00_PROJECT_BRIEF.md
+  📄 01_BUILD_SECTION.md
+  📄 02_DEBUG_ROOT_CAUSE.md
+  📄 03_RESPONSIVE_AUDIT.md
+  📄 04_ACCESSIBILITY_AUDIT.md
+  📄 05_PERFORMANCE_AUDIT.md
+  📄 06_SECURITY_AUDIT.md
+  📄 07_SEO_AUDIT.md
+  📄 08_RELEASE_AUDIT.md
+📁 reports
+  📁 audits
+    📁 ui
+      📄 .gitkeep
+    📁 ux
+      📄 .gitkeep
+📁 scripts
+  📄 audit-report-templates.test.mjs
+  📄 check-audit-artifacts.mjs
+  📄 check-audit-artifacts.test.mjs
+  📄 check-color-balance-ui.mjs
+  📄 check-color-balance-ui.test.mjs
+  📄 check-design-token-usage.mjs
+  📄 check-design-token-usage.test.mjs
+  📄 ci-audit-comment.test.mjs
+  📄 generate-audit-pr-comment.mjs
+  📄 generate-audit-pr-comment.test.mjs
+  📄 generate-audit-report.mjs
+  📄 generate-audit-report.test.mjs
+  📄 grok-command-router.mjs
+  📄 grok-command-router.test.mjs
+  📄 validate-audit-output.mjs
+  📄 validate-audit-output.test.mjs
+  📄 validate-design-tokens.mjs
+  📄 validate-design-tokens.test.mjs
+📁 src
+  📁 app
+    📄 globals.css
+    📄 layout.tsx
+    📄 manifest.ts
+    📄 not-found.tsx
+    📄 page.tsx
+    📄 robots.ts
+    📄 sitemap.ts
+  📁 components
+    📁 layout
+      📄 site-footer.tsx
+      📄 site-header.tsx
+    📁 sections
+      📄 cta.tsx
+      📄 feature-grid.tsx
+      📄 hero.tsx
+    📁 seo
+      📄 json-ld.tsx
+    📁 ui
+      📄 button-link.tsx
+      📄 container.tsx
+  📁 config
+    📄 site.ts
+  📁 data
+    📄 home.ts
+  📁 lib
+    📄 cn.ts
+    📄 seo.ts
+  📁 styles
+    📄 tokens.css
+📄 tsconfig.json

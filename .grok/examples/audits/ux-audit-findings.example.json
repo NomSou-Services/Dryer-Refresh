@@ -1,0 +1,35 @@
+{
+  "scope": "/contact",
+  "goal": "Submit a qualified inquiry",
+  "findings": [
+    {
+      "id": "UX-001",
+      "severity": "high",
+      "area": "forms",
+      "title": "Example finding",
+      "evidence": "Observed evidence.",
+      "userImpact": "User-facing impact.",
+      "recommendation": "Specific corrective action.",
+      "files": [
+        "src/app/contact/page.tsx"
+      ],
+      "fixed": false,
+      "effort": "small",
+      "remediationValidation": "Repeat the affected form flow.",
+      "locations": [
+        {
+          "file": "src/app/contact/page.tsx",
+          "startLine": 42,
+          "endLine": 46
+        }
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "check": "lint",
+      "status": "pass",
+      "notes": "Example validation result."
+    }
+  ]
+}

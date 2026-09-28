@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UI Audit Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "command",
+    "status",
+    "scope",
+    "summary",
+    "findings",
+    "groupedFindings",
+    "prioritizedRemediation",
+    "validation"
+  ],
+  "properties": {
+    "command": {
+      "const": "/ui-audit"
+    },
+    "status": {
+      "enum": [
+        "pass",
+        "pass_with_notes",
+        "blocked"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "findingCount",
+        "bySeverity",
+        "releaseBlockers"
+      ],
+      "properties": {
+        "findingCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bySeverity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "info"
+          ],
+          "properties": {
+            "critical": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "high": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "medium": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "low": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "info": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "releaseBlockers": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "severity",
+          "area",
+          "title",
+          "evidence",
+          "visualImpact",
+          "recommendation",
+          "files",
+          "fixed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^UI-\\d{3}$"
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "info"
+            ]
+          },
+          "area": {
+            "enum": [
+              "design-tokens",
+              "typography",
+              "spacing",
+              "alignment",
+              "grid",
+              "color",
+              "contrast",
+              "component-consistency",
+              "component-states",
+              "responsive-ui",
+              "imagery",
+              "motion",
+              "density",
+              "visual-hierarchy"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visualImpact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recommendation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fixed": {
+            "type": "boolean"
+          },
+          "locations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "file",
+                "startLine"
+              ],
+              "properties": {
+                "file": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "startLine": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "endLine": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "check",
+          "status"
+        ],
+        "properties": {
+          "check": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "not_run",
+              "manual_review"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "groupedFindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "area",
+          "findingIds"
+        ],
+        "properties": {
+          "area": {
+            "enum": [
+              "design-tokens",
+              "typography",
+              "spacing",
+              "alignment",
+              "grid",
+              "color",
+              "contrast",
+              "component-consistency",
+              "component-states",
+              "responsive-ui",
+              "imagery",
+              "motion",
+              "density",
+              "visual-hierarchy"
+            ]
+          },
+          "findingIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^UI-\\d{3}$"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "prioritizedRemediation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "priority",
+          "action",
+          "findingIds",
+          "rationale",
+          "effort",
+          "validation"
+        ],
+        "properties": {
+          "priority": {
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "findingIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^UI-\\d{3}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effort": {
+            "enum": [
+              "small",
+              "medium",
+              "large"
+            ]
+          },
+          "validation": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

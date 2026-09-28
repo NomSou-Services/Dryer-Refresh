@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/contracts/design-tokens.schema.json",
+  "title": "Grok Website Design Token Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "colors",
+    "typography",
+    "spacing",
+    "radii",
+    "shadows",
+    "motion",
+    "breakpoints"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "colors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "required": [
+        "background",
+        "surface",
+        "foreground",
+        "muted",
+        "mutedForeground",
+        "border",
+        "brand",
+        "accent",
+        "destructive",
+        "focus",
+        "brandForeground",
+        "dominant",
+        "dominantForeground",
+        "secondary",
+        "secondaryForeground",
+        "accentForeground"
+      ]
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fontFamily",
+        "fontSize",
+        "fontWeight",
+        "lineHeight",
+        "letterSpacing"
+      ],
+      "properties": {
+        "fontFamily": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "fontSize": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "fontWeight": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number"
+            ]
+          }
+        },
+        "lineHeight": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number"
+            ]
+          }
+        },
+        "letterSpacing": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "spacing": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "radii": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "shadows": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "duration",
+        "easing"
+      ],
+      "properties": {
+        "duration": {
+          "type": "object",
+          "minProperties": 3,
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "easing": {
+          "type": "object",
+          "minProperties": 2,
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "breakpoints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "2xl"
+      ],
+      "properties": {
+        "xs": {
+          "type": "string",
+          "pattern": "^\\d+px$"
+        },
+        "sm": {
+          "type": "string",
+          "pattern": "^\\d+px$"
+        },
+        "md": {
+          "type": "string",
+          "pattern": "^\\d+px$"
+        },
+        "lg": {
+          "type": "string",
+          "pattern": "^\\d+px$"
+        },
+        "xl": {
+          "type": "string",
+          "pattern": "^\\d+px$"
+        },
+        "2xl": {
+          "type": "string",
+          "pattern": "^\\d+px$"
+        }
+      }
+    }
+  }
+}
