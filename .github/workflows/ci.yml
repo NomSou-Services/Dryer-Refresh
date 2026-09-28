@@ -51,7 +51,7 @@ jobs:
 
       - name: Post or update audit PR comment
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           AUDIT_COMMENT_PATH: audit-pr-comment.md
         with:
