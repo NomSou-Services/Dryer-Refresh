@@ -54,8 +54,8 @@ export function WhyItMatters({
         <Image
           src={siteConfig.assets.logoDark}
           alt="Dryer Refresh"
-          width={345}
-          height={282}
+          width={288}
+          height={273}
           className="h-24 w-auto self-start lg:h-28"
         />
       </Container>
