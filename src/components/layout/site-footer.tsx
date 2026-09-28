@@ -12,7 +12,7 @@ export function SiteFooter() {
           alt="Dryer Refresh"
           width={288}
           height={273}
-          className="h-12 w-auto"
+          className="h-12 w-auto self-start sm:self-center"
         />
         <div className="text-sm text-silver sm:text-right">
           <p>Family-owned · Rochester, MN</p>
